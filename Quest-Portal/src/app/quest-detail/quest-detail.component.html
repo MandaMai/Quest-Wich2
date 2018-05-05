@@ -1,0 +1,9 @@
+<div *ngIf="quest">
+  <h2>{{quest.title | uppercase}} Details</h2>
+  <div><span>Id: </span>{{quest.id}}</div>
+  <div>
+    <label>Quest: 
+      <input [(ngModel)]="quest.title" placeholder="Quest Name" type="text">
+    </label>
+  </div>
+</div>
