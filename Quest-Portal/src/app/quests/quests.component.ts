@@ -10,16 +10,17 @@ import { QUESTS } from '../mock-quests';
 })
 export class QuestsComponent implements OnInit {
   quests = QUESTS;
-
   selectedQuest: Quest;
-
-  onSelect(quest: Quest): void {
-    this.selectedQuest = quest;
-  }
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  onSelect(quest: Quest): void {
+    this.selectedQuest = quest;
+  }
+
+
 
 }
