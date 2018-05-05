@@ -1,10 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  </div>
-  <app-quests></app-quests>
+  <h1 style="text-align:center">Welcome to {{ title }}!</h1>
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/quests">Quests</a>
+  </nav>
+  <router-outlet></router-outlet>
   <app-messages></app-messages>
 
 

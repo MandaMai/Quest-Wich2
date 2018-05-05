@@ -1,10 +1,10 @@
 <h2>My Quests</h2>
 
 <ul class="quests">
-  <li *ngFor="let quest of quests" 
-  [class.selected]="quest === selectedQuest"
-  (click)="onSelect(quest)">
-    <span class="badge">{{quest.id}}</span> {{quest.title}}
+  <li *ngFor="let quest of quests" >
+    <a routerLink="/detail/{{quest.id}}">
+      <span class="badge">{{quest.id}}</span> {{quest.title}}
+    </a>  
   </li>
 </ul>
 

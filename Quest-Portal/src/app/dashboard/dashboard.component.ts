@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Quest } from '../quest';
 import { QuestService } from '../quest.service';
 
 @Component({
-  selector: 'app-quests',
-  templateUrl: './quests.component.html',
-  styleUrls: ['./quests.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class QuestsComponent implements OnInit {
-  quests: Quest[];
+export class DashboardComponent implements OnInit {
+  quests: Quest[] = [];
 
   constructor(private questService: QuestService) { }
 
@@ -19,8 +18,7 @@ export class QuestsComponent implements OnInit {
 
   getQuests(): void {
     this.questService.getQuests()
-      .subscribe(quests => this.quests = quests);
+      .subscribe(quests => this.quests = quests.slice(0)); // may need to change this (5) to return all info
   }
-
 
 }
