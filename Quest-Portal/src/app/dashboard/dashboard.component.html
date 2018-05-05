@@ -1,0 +1,9 @@
+<h3>Quest List</h3>
+
+<div class="grid grid-pad">
+  <a *ngFor="let quest of quests" class="col-1-4" routerLink="/detail/{{quest.id}}">
+    <div class="module quest">
+      <h4>{{quest.title}}</h4>
+    </div>
+  </a>
+</div>

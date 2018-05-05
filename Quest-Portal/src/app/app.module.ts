@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { QuestsComponent } from './quests/quests.component';
 import { QuestDetailComponent } from './quest-detail/quest-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -14,11 +16,13 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     QuestsComponent,
     QuestDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule
     , FormsModule
+    , AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
