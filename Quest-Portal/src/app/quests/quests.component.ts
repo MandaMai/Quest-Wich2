@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Quest } from '../quest';
-import { QUESTS } from '../mock-quests';
+import { QuestService } from '../quest.service';
 
 @Component({
   selector: 'app-quests',
@@ -9,18 +9,24 @@ import { QUESTS } from '../mock-quests';
   styleUrls: ['./quests.component.scss']
 })
 export class QuestsComponent implements OnInit {
-  quests = QUESTS;
-  selectedQuest: Quest;
 
-  constructor() { }
+  selectedQuest: Quest;
+  quests: Quest[];
+
+  constructor(private questService: QuestService) { }
 
   ngOnInit() {
+    this.getQuests();
   }
 
   onSelect(quest: Quest): void {
     this.selectedQuest = quest;
   }
 
+  getQuests(): void {
+    this.questService.getQuests()
+      .subscribe(quests => this.quests = quests);
+  }
 
 
 }
