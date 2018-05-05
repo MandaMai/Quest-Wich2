@@ -1,0 +1,20 @@
+<h2>My Quests</h2>
+<ul class="quests">
+  <li *ngFor="let quest of quests" 
+  [class.selected]="quest === selectedQuest"
+  (click)="onSelect(quest)">
+    <span class="badge">{{quest.id}}</span> {{quest.title}}
+  </li>
+</ul>
+
+<div *ngIf="selectedQuest">
+  <h2>{{selectedQuest.title | uppercase}} Details</h2>
+  <div><span>Id: </span>{{selectedQuest.id}}</div>
+  <div>
+    <label>Quest: 
+      <input [(ngModel)]="selectedQuest.title" placeholder="Quest Name" type="text">
+    </label>
+  </div>
+</div>
+
+
